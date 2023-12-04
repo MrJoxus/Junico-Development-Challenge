@@ -15,7 +15,7 @@
     "prisma-seed": "npx prisma db seed"
   },
   "prisma": {
-    "seed": "ts-node --esm prisma/seed.ts"
+    "seed": "tsx prisma/seed.ts"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
@@ -31,6 +31,7 @@
     "eslint": "^8.50.0",
     "nuxt": "^3.7.4",
     "ts-node": "^10.9.1",
+    "tsx": "^4.6.2",
     "typescript": "^5.2.2",
     "vue": "^3.3.4",
     "vue-router": "^4.2.5"
