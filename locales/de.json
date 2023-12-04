@@ -1,0 +1,12 @@
+{
+  "welcome": "Willkommen",
+  "tongueTwister": "Brautkleid bleibt Brautkleid und Blaukraut bleibt Blaukraut.",
+  "c": {
+    "navbar": {
+      "title": "Titel",
+      "login": "Login",
+      "registration": "Registrieren"
+    }
+  },
+  "p": {}
+}

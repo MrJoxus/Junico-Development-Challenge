@@ -1,0 +1,12 @@
+{
+  "welcome": "Welcome",
+  "tongueTwister": "If a dog chews shoes whose shoes does he choose?",
+  "c": {
+    "navbar": {
+      "title": "Title",
+      "login": "Login",
+      "registration": "Sign Up"
+    }
+  },
+  "p": {}
+}
