@@ -8,19 +8,32 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  name  String?
-  posts Post[]
+  id         String       @id @default(uuid())
+  email      String       @unique
+  firstName  String
+  lastName   String
+  password   String // DO NOT DO THIS! Just for demonstration purposes
+  type       Role
+  address    String
+  phone      String
+  city       String
+  postalCode String
+  createdAt  DateTime     @default(now())
+  updatedAt  DateTime     @default(now())
+  PointEvent PointEvent[]
 }
 
-model Post {
-  id        Int     @id @default(autoincrement())
-  title     String
-  content   String?
-  published Boolean @default(false)
-  authorId  Int
-  author    User    @relation(fields: [authorId], references: [id])
+enum Role {
+  CLIENT
+  FREELANCER
+}
 
-  @@index([authorId], map: "Post_authorId_fkey")
+model PointEvent {
+  id        String   @id @default(uuid())
+  points    Int
+  info      String
+  createdAt DateTime @default(now())
+  userId    String
+
+  user User @relation(references: [id], fields: [userId])
 }
