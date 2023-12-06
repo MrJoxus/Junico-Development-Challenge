@@ -1,5 +1,8 @@
 <template lang="">
   <div class="container mx-auto mt-8">
+    <h1 class="prose prose-2xl font-bold">
+      user
+    </h1>
     <div>
       example: ?sort=asc&sort_by=firstName&page=2
     </div>
@@ -12,6 +15,7 @@
           <th>LastEvent</th>
           <th>Score</th>
           <th>TotalPoints</th>
+          <th>UserType</th>
         </tr>
       </thead>
       <tbody>
@@ -38,6 +42,7 @@
           </td>
           <td>{{ user.score }}</td>
           <td>{{ user.totalPoints }}</td>
+          <td>{{ user.type }}</td>
         </tr>
       </tbody>
     </table>

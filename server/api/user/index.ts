@@ -22,10 +22,12 @@ export default defineEventHandler(async (event) => {
   const skip = Number(page) <= 0 ? 0 : (Number(page) - 1) * take
 
   let users = await prisma.user.findMany({
+    where: { type: 'FREELANCER' },
     skip,
     take,
     select: {
       id: true,
+      type: true,
       firstName: true,
       lastName: true,
       pointEvents: {

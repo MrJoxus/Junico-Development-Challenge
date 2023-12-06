@@ -8,6 +8,9 @@
     >
       <slot />
       <div>
+        hoverable {{ hoverable }}
+      </div>
+      <div>
         hover {{ hover }}
       </div>
       <div>
@@ -23,6 +26,7 @@ export interface Props {
   level: 0 | 1 | 2 | 3
   inset: 0 | 1 | 2 | 3
   color: string
+  hoverable: boolean
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -39,14 +43,7 @@ function between (x: number, min: number, max: number) {
 }
 
 const levelStyle = computed(() => {
-  let index = between(props.level, 0, 3) ? props.level : 0
-  if (hover.value && index === 3) {
-    index -= 1
-  } else if (hover.value) {
-    index += 1
-  }
-
-  return [
+  const listStyles = [
     {
       borderWidth: '1px',
       borderColor: props.color
@@ -65,7 +62,19 @@ const levelStyle = computed(() => {
       borderColor: props.color,
       boxShadow: `3px 3px 0 0 ${props.color}`
     }
-  ][index]
+  ]
+
+  const index = between(props.level, 0, 3) ? props.level : 0
+
+  if (!(props.hoverable && hover.value)) {
+    return listStyles[index]
+  }
+
+  if (index === 3) {
+    return listStyles[index - 1]
+  }
+
+  return listStyles[index + 1]
 })
 
 const radiusStyle = computed(() => {

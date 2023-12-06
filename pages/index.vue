@@ -16,7 +16,14 @@
       <template v-for="inset in loop" :key="`${level}-${inset}`">
         <div class="flex flex-wrap wrap">
           <template v-for="radius in loop" :key="`${level}-${inset}-${radius}`">
-            <Card class="w-1/4" :color="colors[level]" :inset="inset" :radius="radius" :level="level">
+            <Card
+              class="w-1/4"
+              hoverable
+              :color="colors[level]"
+              :inset="inset"
+              :radius="radius"
+              :level="level"
+            >
               <div>
                 <div>
                   level: {{ level }}
@@ -38,7 +45,7 @@
 <script setup lang="ts">
 
 const loop = [0, 1, 2, 3]
-const colors = ['red', 'green', 'blue', 'violet']
+const colors = ['red', 'green', 'black', 'blue']
 
 definePageMeta({
   layout: 'website'

@@ -1,5 +1,8 @@
 <template lang="">
   <div class="container mx-auto mt-8">
+    <h1 class="prose prose-2xl font-bold">
+      user/{{ route.params.id }}
+    </h1>
     <table class="table">
       <thead>
         <tr>
@@ -8,6 +11,7 @@
           <th>LastName</th>
           <th>LastEvent</th>
           <th>Score</th>
+          <th>UserType</th>
         </tr>
       </thead>
       <tbody>
@@ -29,6 +33,7 @@
             </div>
           </td>
           <td>{{ data.user.score }}</td>
+          <td>{{ data.user.type }}</td>
         </tr>
       </tbody>
     </table>
