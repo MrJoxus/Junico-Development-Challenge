@@ -54,6 +54,16 @@ const items = [
     title: 'Home',
     icon: HomeIcon,
     to: localePath({ name: 'index' })
+  },
+  {
+    title: 'Users',
+    icon: HomeIcon,
+    to: localePath({ name: 'users' })
+  },
+  {
+    title: 'Points',
+    icon: HomeIcon,
+    to: localePath({ name: 'points-id', params: { id: '64130a0c02e520f89f715a34' } })
   }
 ]
 
