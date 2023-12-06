@@ -1,6 +1,8 @@
 import { PrismaClient } from '@prisma/client'
+
 import users from '~/prisma/seed_data/users.json'
 import pointEvents from '~/prisma/seed_data/pointevents.json'
+
 const prisma = new PrismaClient()
 async function main () {
   const formattedUsers = users.map((user) => {

@@ -8,19 +8,19 @@ datasource db {
 }
 
 model User {
-  id         String       @id @default(uuid())
-  email      String       @unique
-  firstName  String
-  lastName   String
-  password   String // DO NOT DO THIS! Just for demonstration purposes
-  type       Role
-  address    String
-  phone      String
-  city       String
-  postalCode String
-  createdAt  DateTime     @default(now())
-  updatedAt  DateTime     @default(now())
-  PointEvent PointEvent[]
+  id          String       @id @default(uuid())
+  email       String       @unique
+  firstName   String
+  lastName    String
+  password    String // DO NOT DO THIS! Just for demonstration purposes
+  type        Role
+  address     String
+  phone       String
+  city        String
+  postalCode  String
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @default(now())
+  pointEvents PointEvent[]
 }
 
 enum Role {
