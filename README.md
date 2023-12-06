@@ -13,7 +13,8 @@ docker compose build
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+Copy or rename `example.env` to `.env`.
+Start the development server on `http://localhost:3333`:
 
 ```bash
 # yarn
